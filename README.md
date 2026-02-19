@@ -26,14 +26,15 @@ The primary objective was to design a robust classification pipeline to handle h
 The project utilizes a comprehensive Data Science stack to process spectral signals:
 
 * **Language:** Python 3.14.3
-* **Libraries:** `scikit-learn`, `pandas`, `numpy`, `matplotlib`, `seaborn`
+* **Primary Libraries:** `scikit-learn`, `pandas`, `numpy`, `matplotlib`
 * **Algorithms Implemented:**
-    * Support Vector Machines
-    * K-Nearest Neighbors
-    * Random Forest Classifier
-    * Decision Trees & Naive Bayes
+    * SVM
+    * kNN
     * Logistic Regression
+    * Random Forest Classifier
+    * Decision Trees
     * Linear & Quadratic Discriminant Analysis
+    * Naive Bayes
     
 ## 🤝 Workflow
 * **Data Ingestion:** Automated loading of spectral data from Excel formats.
