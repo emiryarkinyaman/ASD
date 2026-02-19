@@ -1,6 +1,7 @@
+scipy
 numpy
 pandas
-matplotlib
-scipy
-scikit-learn
 openpyxl
+matplotlib
+seaborn
+scikit-learn
