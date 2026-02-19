@@ -58,9 +58,11 @@ Using the proprietary dataset collected during the study, the developed machine 
 |-- /Primary_Study
 |-- /Results
 |-- /Supportive_Studies
+|-- LICENSE
 |-- main.py
 |-- OPTIMIZER.ipynb
 |-- README.md
+|-- requirements.txt
 |-- Workflow.png
 ```
 
