@@ -77,12 +77,10 @@ Special thanks to the authors for their contributions to the field.
 
 ## 🔒 License & Copyright
 
-© 2022-2024 Emir Yarkın Yaman.
-
-This project is published for portfolio and academic review purposes only.
+© 2022-2026 Emir Yarkın Yaman.
 
 **Strictly Prohibited:** Commercial use, redistribution, or modification of this code for production systems without prior written consent.
 
 **Allowed:** You may view and fork this repository to review the code structure and methodology.
 
-For inquiries regarding the methodology or collaboration, please contact.
+This project is published for portfolio and academic review purposes only. For inquiries regarding the methodology or collaboration, please contact.
