@@ -62,7 +62,7 @@ Using the proprietary dataset collected during the study, the developed machine 
 |-- LICENSE
 |-- README.md
 |-- main.py
-|-- OPTIMIZER.ipynb
+|-- optimizer.ipynb
 |-- requirements.txt
 ```
 
