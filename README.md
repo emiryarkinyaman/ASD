@@ -63,7 +63,6 @@ Using the proprietary dataset collected during the study, the developed machine 
 |-- OPTIMIZER.ipynb
 |-- README.md
 |-- requirements.txt
-|-- Workflow.png
 ```
 
 ## 💻 Usage & Exploration
