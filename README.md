@@ -82,8 +82,8 @@ Special thanks to the authors for their contributions to the field.
 
 This project is published for portfolio and academic review purposes only.
 
-Strictly Prohibited: Commercial use, redistribution, or modification of this code for production systems without prior written consent.
+**Strictly Prohibited:** Commercial use, redistribution, or modification of this code for production systems without prior written consent.
 
-Allowed: You may view and fork this repository to review the code structure and methodology.
+**Allowed:** You may view and fork this repository to review the code structure and methodology.
 
 For inquiries regarding the methodology or collaboration, please contact.
