@@ -35,12 +35,12 @@ The project utilizes a comprehensive Data Science stack to process spectral sign
     * Decision Trees
     * Linear & Quadratic Discriminant Analysis
     * Naive Bayes
-    
+
 ## 🤝 Workflow
 * **Data Ingestion:** Automated loading of spectral data from Excel formats.
 * **Preprocessing:** Feature scaling using `StandardScaler` to normalize spectral intensities.
-* **Model Benchmarking (`main.py`):** Simultaneous training and evaluation of 8+ algorithms using K-Fold Cross Validation.
 * **Hyperparameter Tuning (`optimizer.ipynb`):** Using `GridSearchCV` to find optimal kernels and regularization parameters for the top-performing models.
+* **Model Benchmarking (`main.py`):** Simultaneous training and evaluation of 8+ algorithms using K-Fold Cross Validation.
 
 ## 🚀 Key Results (Based On Private Dataset)
 
@@ -56,13 +56,13 @@ Using the proprietary dataset collected during the study, the developed machine 
 /ASD
 |-- /Data
 |-- /Plots
-|-- /Primary_Study
+|-- /Primary Study
 |-- /Results
-|-- /Supportive_Studies
+|-- /Supportive Studies
 |-- LICENSE
+|-- README.md
 |-- main.py
 |-- OPTIMIZER.ipynb
-|-- README.md
 |-- requirements.txt
 ```
 
