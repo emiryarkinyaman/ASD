@@ -32,7 +32,7 @@ cross_val_size = 13
 
 "-----------------------------------------------------------------------------------------------------------------------------------"
 
-data = pd.DataFrame(pd.read_excel("Data/Data.xlsx", sheet_param))
+data = pd.DataFrame(pd.read_excel("Data/Data.xlsx",sheet_param))
 total_features = len(list(data[data.columns[0]]))
 
 "-----------------------------------------------------------------------------------------------------------------------------------"
@@ -51,18 +51,18 @@ for i in old_lengths:
 
 data.columns = new_lengths
 if slice_param == "Full Interval":
-    data = data.loc[:, 600:3801]
+    data = data.loc[:,600:3801]
     new_lengths = list(data.columns)
 elif slice_param  == "Fingerprint Region":
-    data = data.loc[:, 800:1701]
+    data = data.loc[:,800:1701]
     new_lengths = list(data.columns)
 elif slice_param  == "High-frequency Region":
-    data = data.loc[:, 2600:3001]
+    data = data.loc[:,2600:3001]
     new_lengths = list(data.columns)
 elif slice_param  == "Double Interval":
-    df1 = data.loc[:, 2600:3001]
-    df2 = data.loc[:, 800:1701]
-    data = pd.concat([df2,df1], axis = 1)
+    df1 = data.loc[:,2600:3001]
+    df2 = data.loc[:,800:1701]
+    data = pd.concat([df2,df1],axis = 1)
     new_lengths = list(data.columns)
 
 wavelengths = list(data.columns)
@@ -72,7 +72,7 @@ data["Id"] = list(id0001)
 
 "-----------------------------------------------------------------------------------------------------------------------------------"
 
-area, rreeff, max_y_detected = [], [], []
+area,rreeff,max_y_detected = [],[],[]
 
 for i in id0001:
     crack = pd.DataFrame(data.loc[data["Id"] == i]).values.reshape(total_features_of_wavelengths+1,1).tolist()
@@ -86,7 +86,7 @@ for i in id0001:
     x = wavelengths
     max_y_detected.append(max(y))
 
-    a = round(trapz(y, dx=max(x)),3)
+    a = round(trapz(y,dx=max(x)),3)
     area.append(a)
 
 "-----------------------------------------------------------------------------------------------------------------------------------"
@@ -94,7 +94,7 @@ for i in id0001:
 data = data.drop(columns=["Id"])
 
 if smoothing_param == "On":
-    smoothing = savgol_filter(data, window_length=15, polyorder=3)
+    smoothing = savgol_filter(data,window_length=15,polyorder=3)
     data = pd.DataFrame(smoothing)
 
 data.columns = new_lengths
@@ -112,8 +112,8 @@ if normalization_param == "Area Normalization":
 "-----------------------------------------------------------------------------------------------------------------------------------"
 
 PINKM4N = id0001
-RBFX, POLYX, LINEARX, MINKOWSKIX, EUCLIDEANX, COSINEX, HEISENBERG = [], [], [], [], [], [], pd.DataFrame()
-TL31, SL31 = [], []
+RBFX,POLYX,LINEARX,MINKOWSKIX,EUCLIDEANX,COSINEX,HEISENBERG = [],[],[],[],[],[],pd.DataFrame()
+TL31,SL31 = [],[]
 
 HEISENBERG["Reference"] = id0001
 HEISENBERG["Label"] = status0001
@@ -122,8 +122,8 @@ for ABQ in PINKM4N:
     data["Reference"] = id0001
     data["Y"] = status0001
 
-    y_test, y_train = [], []
-    x_test, x_train = [], []
+    y_test,y_train = [],[]
+    x_test,x_train = [],[]
 
     # Selecting the one & filling the y_test.
     YY = data.loc[data["Reference"] == ABQ]
@@ -148,7 +148,7 @@ for ABQ in PINKM4N:
     x_train = XX.values
     x_test = YY.values
 
-    # Let"s define the big X and the big Y in terms of the full feature matrix.
+    # Let's define the big X and the big Y in terms of the full feature matrix.
     temporary_defined_variable = data
     Y = list(temporary_defined_variable["Y"])
     
@@ -167,7 +167,7 @@ for ABQ in PINKM4N:
     
     "-----------------------------------------------------------------------------------------------------------------------------------"
 
-    y_train_new, y_test_new, Y_NEW = [], [], []
+    y_train_new,y_test_new,Y_NEW = [],[],[]
 
     for i in list(y_train):
         if i == "H":
@@ -198,12 +198,12 @@ for ABQ in PINKM4N:
 
     "-----------------------------------------------------------------------------------------------------------------------------------"
     
-    # RBF-gamma, RBF-tol, RBF-c.
-    # POLY-gamma, POLY-tol, POLY-c.
-    # Linear-gamma, Linear-tol, Linear-c.
-    # Minkowski-n, Minkwoski-weight.
-    # Euclidean-n, Euclidean-weight.
-    # Cosine-n, Cosine-weight.
+    # RBF-gamma,RBF-tol,RBF-c.
+    # POLY-gamma,POLY-tol,POLY-c.
+    # Linear-gamma,Linear-tol,Linear-c.
+    # Minkowski-n,Minkwoski-weight.
+    # Euclidean-n,Euclidean-weight.
+    # Cosine-n,Cosine-weight.
 
     "-----------------------------------------------------------------------------------------------------------------------------------"
 
@@ -416,9 +416,9 @@ for ABQ in PINKM4N:
 
     "-----------------------------------------------------------------------------------------------------------------------------------"
 
-    def resume(title, model, pool, truee_list_roc, score_list_roc):
+    def resume(title,model,pool,truee_list_roc,score_list_roc):
 
-        model.fit(x_train, y_train)
+        model.fit(x_train,y_train)
         y_predicted = model.predict(x_test)
         
         if y_test[0] == y_predicted[0]:
@@ -448,14 +448,14 @@ HEISENBERG["Cosine"] = COSINEX
 
 "-----------------------------------------------------------------------------------------------------------------------------------"
 
-FPR, TPR, thresholds = roc_curve(np.array(TL31), np.array(SL31))
-roc_auc = auc(FPR, TPR)
+FPR,TPR,thresholds = roc_curve(np.array(TL31),np.array(SL31))
+roc_auc = auc(FPR,TPR)
 
 plt.figure(figsize=(16,9),dpi=72)
-plt.plot(FPR, TPR, color="darkorange", lw=2, label="ROC Curve (Area = %0.2f)" %roc_auc)
-plt.plot([0, 1], [0, 1], color="navy", lw=2, linestyle="--")
-plt.xlim([0.0, 1.0])
-plt.ylim([0.0, 1.05])
+plt.plot(FPR,TPR,color="darkorange",lw=2,label="ROC Curve (Area = %0.2f)" %roc_auc)
+plt.plot([0,1],[0,1],color="navy",lw=2,linestyle="--")
+plt.xlim([0.0,1.0])
+plt.ylim([0.0,1.05])
 plt.xlabel("FPR")
 plt.ylabel("TPR")
 plt.title(f"SVC-RBF Receiver Operating Characteristic (ROC) Curve")
@@ -471,5 +471,5 @@ elif mode == "LOOCV":
 elif mode == "Plot":
     plt.show()
 else:
-    print("Please select a valid parameter setting for 'mode'.")
+    print("Please select a valid parameter setting for variable named mode.")
     sys.exit()
