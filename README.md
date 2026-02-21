@@ -55,7 +55,6 @@ Using the proprietary dataset collected during the study, the developed machine 
 ```plaintext
 /ASD
 |-- /Data
-|-- /Plots
 |-- /Primary Study
 |-- /Results
 |-- /Supportive Studies
