@@ -1,0 +1,7 @@
+© 2022 Emir Yarkın Yaman.
+
+**Strictly Prohibited:** Commercial use, redistribution, or modification of this code for production systems without prior written consent.
+
+**Allowed:** You may view and fork this repository to review the code structure and methodology.
+
+This project is published for portfolio and academic review purposes only. For inquiries regarding the methodology or collaboration, please contact.
